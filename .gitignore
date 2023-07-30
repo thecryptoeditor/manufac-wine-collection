@@ -3,6 +3,9 @@
 /.pnp
 .pnp.js
 
+# removing yarn lock json file here.
+.yarn.lock
+
 # testing
 /coverage
 
