@@ -2,6 +2,7 @@
  - Created by Jatin Agrawal
  - github username: `thecryptoeditor`
  - github account link: [https://github.com/thecryptoeditor](https://github.com/thecryptoeditor)
+ - All rights reserved by the authors and thecryptoeditor
 
 ## Available Scripts
 
@@ -15,7 +16,7 @@ On Your Network: [http://192.168.1.3:3000](http://192.168.1.3:3000)
 
 The page will auto reload when you make changes.
 
-### `npm run build`
+### `yarn run build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
