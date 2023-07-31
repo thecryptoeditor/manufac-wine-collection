@@ -47,8 +47,8 @@ export const CalGamma = () => {
                     <tr>
                         <th>Measure</th>
 
-                        {classStats.map((abc) => (
-                            <th key={abc.Alcohol}>Class {abc.Alcohol}</th>
+                        {classStats.map((thClass) => (
+                            <th key={thClass.Alcohol}>Class {thClass.Alcohol}</th>
                         ))}
 
                     </tr>
