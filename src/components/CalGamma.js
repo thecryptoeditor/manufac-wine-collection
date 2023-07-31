@@ -22,7 +22,7 @@ export const CalGamma = () => {
 
     });
 
-    // Calculate mean, median, and mode for each class
+    // Calculate mean, median, and mode for each data set for gamma calculation
     const classStats = Object.keys(groupedData).map((alcoholClass) => {
 
         const gammaData = groupedData[alcoholClass];
@@ -38,29 +38,49 @@ export const CalGamma = () => {
         };
     });
 
-    // Render table with class-wise statistics
+    // Render table by gamma data
     return (
         <div className="displayTable">
             <table>
+
                 <thead>
                     <tr>
-                        <th>Alcohol Class</th>
-                        <th>Gamma Mean</th>
-                        <th>Gamma Median</th>
-                        <th>Gamma Mode</th>
+                        <th>Measure</th>
+
+                        {classStats.map((abc) => (
+                            <th key={abc.Alcohol}>Class {abc.Alcohol}</th>
+                        ))}
+
                     </tr>
                 </thead>
 
                 <tbody>
-                    {classStats.map((newStat) => (
-                        <tr key={newStat.Alcohol}>
-                            <td>{newStat.Alcohol}</td>
-                            <td>{ Number(newStat.Mean).toFixed(3) }</td>
-                            <td>{ Number(newStat.Median).toFixed(3) }</td>
-                            <td>{ Number(newStat.Mode).toFixed(3) }</td>
-                        </tr>
-                    ))}
+                    <tr>
+                        <td>Gamma Mean</td>
+
+                        {classStats.map((newStat) => (
+                            <td key={newStat.Alcohol}>{Number(newStat.Mean).toFixed(3)}</td>
+                        ))}
+
+                    </tr>
+
+                    <tr>
+                        <td>Gamma Median</td>
+
+                        {classStats.map((newStat) => (
+                            <td key={newStat.Alcohol}>{Number(newStat.Median).toFixed(3)}</td>
+                        ))}
+                    </tr>
+
+                    <tr>
+                        <td>Gamma Mode</td>
+
+                        {classStats.map((newStat) => (
+                            <td key={newStat.Alcohol}>{Number(newStat.Mode).toFixed(3)}</td>
+                        ))}
+                    </tr>
                 </tbody>
+
             </table>
         </div>
     );

@@ -42,25 +42,45 @@ const ClassWiseStatsComponent = () => {
     return (
         <div className="displayTable">
             <table>
+
                 <thead>
                     <tr>
-                        <th>Alcohol Class</th>
-                        <th>Mean</th>
-                        <th>Median</th>
-                        <th>Mode</th>
+                        <th>Measure</th>
+
+                        {classStats.map((abc) => (
+                            <th key={abc.Alcohol}>Class {abc.Alcohol}</th>
+                        ))}
+
                     </tr>
                 </thead>
 
                 <tbody>
-                    {classStats.map((stat) => (
-                        <tr key={stat.Alcohol}>
-                            <td>{stat.Alcohol}</td>
-                            <td>{ (Number(stat.Mean)).toFixed(3) }</td>
-                            <td>{ (Number(stat.Median)).toFixed(3) }</td>
-                            <td>{ (Number(stat.Mode)).toFixed(3) }</td>
-                        </tr>
-                    ))}
+                    <tr>
+                        <td>Flavanoids Mean</td>
+
+                        {classStats.map((newStat) => (
+                            <td key={newStat.Alcohol}>{Number(newStat.Mean).toFixed(3)}</td>
+                        ))}
+
+                    </tr>
+
+                    <tr>
+                        <td>Flavanoids Median</td>
+
+                        {classStats.map((newStat) => (
+                            <td key={newStat.Alcohol}>{Number(newStat.Median).toFixed(3)}</td>
+                        ))}
+                    </tr>
+
+                    <tr>
+                        <td>Flavanoids Mode</td>
+
+                        {classStats.map((newStat) => (
+                            <td key={newStat.Alcohol}>{Number(newStat.Mode).toFixed(3)}</td>
+                        ))}
+                    </tr>
                 </tbody>
+
             </table>
         </div>
     );
