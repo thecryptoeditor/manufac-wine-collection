@@ -36,6 +36,7 @@ const ClassWiseStatsComponent = () => {
             Median: median,
             Mode: mode,
         };
+        
     });
 
     // Render table with class-wise statistics
