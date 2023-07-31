@@ -5,7 +5,7 @@ import { calculateMode } from "../utils/mode.js";
 import winecollectionList from "../static/wineCollection.json";
 import "../assets/style/common.css"
 
-const ClassWiseStatsComponent = () => {
+export const CalGamma = () => {
 
     // Group data by "Alcohol" class
     const groupedData = {};
@@ -25,10 +25,10 @@ const ClassWiseStatsComponent = () => {
     // Calculate mean, median, and mode for each class
     const classStats = Object.keys(groupedData).map((alcoholClass) => {
 
-        const flavanoidsData = groupedData[alcoholClass];
-        const mean = calculateMean(flavanoidsData);
-        const median = calculateMedian(flavanoidsData);
-        const mode = calculateMode(flavanoidsData);
+        const gammaData = groupedData[alcoholClass];
+        const mean = calculateMean(gammaData);
+        const median = calculateMedian(gammaData);
+        const mode = calculateMode(gammaData);
 
         return {
             Alcohol: alcoholClass,
@@ -45,19 +45,19 @@ const ClassWiseStatsComponent = () => {
                 <thead>
                     <tr>
                         <th>Alcohol Class</th>
-                        <th>Mean</th>
-                        <th>Median</th>
-                        <th>Mode</th>
+                        <th>Gamma Mean</th>
+                        <th>Gamma Median</th>
+                        <th>Gamma Mode</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    {classStats.map((stat) => (
-                        <tr key={stat.Alcohol}>
-                            <td>{stat.Alcohol}</td>
-                            <td>{ (Number(stat.Mean)).toFixed(3) }</td>
-                            <td>{ (Number(stat.Median)).toFixed(3) }</td>
-                            <td>{ (Number(stat.Mode)).toFixed(3) }</td>
+                    {classStats.map((newStat) => (
+                        <tr key={newStat.Alcohol}>
+                            <td>{newStat.Alcohol}</td>
+                            <td>{ Number(newStat.Mean).toFixed(3) }</td>
+                            <td>{ Number(newStat.Median).toFixed(3) }</td>
+                            <td>{ Number(newStat.Mode).toFixed(3) }</td>
                         </tr>
                     ))}
                 </tbody>
@@ -67,4 +67,4 @@ const ClassWiseStatsComponent = () => {
 
 };
 
-export default ClassWiseStatsComponent;
+export default CalGamma;
