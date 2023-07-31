@@ -4,6 +4,11 @@
  - github account link: [https://github.com/thecryptoeditor](https://github.com/thecryptoeditor)
  - All rights reserved by the authors and thecryptoeditor
 
+## Screenshots for better understanding
+
+![Alt text](<Screenshot 2023-07-31 at 6.19.13 PM.png>)
+![Alt text](<Screenshot 2023-07-31 at 6.19.06 PM.png>)
+
 ## Available Scripts
 
 In the project directory, you can run:
